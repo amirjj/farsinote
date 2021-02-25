@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Notes</title>
 </head>
 <body>
-$END$
+    <ul>
+        {% for note in note_list %}
+            <li>
+                <a href="{% url 'detail' note.id %}"> <b>{{ note.title }}</b></a>
+                <a>{{ note.note_body }}</a>
+            </li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
