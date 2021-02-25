@@ -30,9 +30,5 @@ def new(request):
         n = Note(title=title, created_date=date, body=body)
         n.save()
 
-
-
-        return render(request, 'note/new.html')
-
     return render(request, 'note/new.html')
 
