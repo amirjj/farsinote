@@ -1,6 +1,11 @@
 # Created by https://www.gitignore.io
 .idea
 .idea/
+
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+
 ### OSX ###
 .DS_Store
 .AppleDouble
