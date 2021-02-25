@@ -1,13 +1,16 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+from django.views import generic
 import datetime
 from .models import Note
 
 
-def index(request):
-    note_list = Note.objects.all()
-    context = {'note_list': note_list}
-    return render(request, 'note/index.html', context)
+class IndexView(generic.ListView):
+    template_name = 'note/index.html'
+    context_object_name = 'note_list'
+
+    def get_queryset(self):
+        return Note.objects.all()
 
 
 def create(request):
@@ -32,7 +35,4 @@ def new(request):
         return render(request, 'note/new.html')
 
     return render(request, 'note/new.html')
-
-
-    return rend
 
