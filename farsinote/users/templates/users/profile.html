@@ -8,6 +8,8 @@
 <body>
     <div>
         <small>Welcome <a href="{% url 'index' %}">{{ user.username }}</a> </small>
+        <p>{{ user.email }}</p>
+        <img src="{{ user.profile.image.url }}">
     </div>
 </body>
 </html>
