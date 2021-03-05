@@ -11,6 +11,13 @@
         <p>{{ user.email }}</p>
         <img src="{{ user.profile.image.url }}">
     </div>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ u_form | crispy }}
+        {{ p_form | crispy }}
+        <input type="submit" name="submit" value="Update">
+    </form>
 </body>
 </html>
 
