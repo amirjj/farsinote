@@ -1,4 +1,6 @@
 from django.db import models
+import datetime
+from django.urls import reverse
 
 
 class Note(models.Model):
@@ -10,4 +12,12 @@ class Note(models.Model):
     tag = models.CharField(max_length=200)
     body = models.TextField()
     is_deleted = models.BooleanField(default=False)
+
+    def save(self):
+        self.created_date = datetime.datetime.now()
+        super().save()
+
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'pk': self.pk})
+
 
