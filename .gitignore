@@ -6,7 +6,7 @@
 !**/migrations
 !**/migrations/__init__.py
 
-/profile_pics/**
+**/profile_pics/**
 
 ### OSX ###
 .DS_Store
