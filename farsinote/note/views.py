@@ -17,6 +17,7 @@ class NoteListView(LoginRequiredMixin, ListView):
     template_name = 'note/index.html'
     context_object_name = 'note_list'
     ordering = ['-created_date']
+    paginate_by = 4
 
 
 def create(request):
