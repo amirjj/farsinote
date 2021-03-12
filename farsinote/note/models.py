@@ -13,9 +13,9 @@ class Note(models.Model):
     body = models.TextField()
     is_deleted = models.BooleanField(default=False)
 
-    def save(self):
+    def save(self, *args, **kwargs):
         self.created_date = datetime.datetime.now()
-        super().save()
+        super().save(*args, **kwargs)
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'pk': self.pk})
